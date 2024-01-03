@@ -4,7 +4,10 @@
  */
 package dyqan;
 
+
 import java.awt.Image;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.print.PrinterException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -20,6 +23,8 @@ public class Dashboard extends javax.swing.JFrame {
     private double total=0.0;
     private int x=0;
     private double tax = 0.0;
+    
+  
   
     public Dashboard() {
         initComponents();
@@ -79,6 +84,8 @@ public class Dashboard extends javax.swing.JFrame {
        }
        return true;
     }
+    
+    
     
     public void reset(){
     total=0.0;
@@ -222,6 +229,8 @@ public class Dashboard extends javax.swing.JFrame {
         btnFatura = new javax.swing.JButton();
         btnReset = new javax.swing.JButton();
         btnExit = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
         jPanel17 = new javax.swing.JPanel();
         jTextFieldTax = new javax.swing.JTextField();
         jTextFieldSubTotal = new javax.swing.JTextField();
@@ -1012,7 +1021,7 @@ public class Dashboard extends javax.swing.JFrame {
 
         jPanel16.setBackground(new java.awt.Color(255, 255, 255));
 
-        btnTotal.setBackground(new java.awt.Color(102, 255, 102));
+        btnTotal.setBackground(new java.awt.Color(51, 255, 51));
         btnTotal.setFont(new java.awt.Font("Times New Roman", 1, 20)); // NOI18N
         btnTotal.setForeground(new java.awt.Color(255, 255, 255));
         btnTotal.setText("Total");
@@ -1022,7 +1031,7 @@ public class Dashboard extends javax.swing.JFrame {
             }
         });
 
-        btnFatura.setBackground(new java.awt.Color(0, 153, 255));
+        btnFatura.setBackground(new java.awt.Color(51, 102, 255));
         btnFatura.setFont(new java.awt.Font("Times New Roman", 1, 20)); // NOI18N
         btnFatura.setForeground(new java.awt.Color(255, 255, 255));
         btnFatura.setText("Fatura");
@@ -1042,13 +1051,33 @@ public class Dashboard extends javax.swing.JFrame {
             }
         });
 
-        btnExit.setBackground(new java.awt.Color(204, 0, 51));
+        btnExit.setBackground(new java.awt.Color(255, 0, 51));
         btnExit.setFont(new java.awt.Font("Times New Roman", 1, 20)); // NOI18N
         btnExit.setForeground(new java.awt.Color(255, 255, 255));
         btnExit.setText("Exit");
         btnExit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnExitActionPerformed(evt);
+            }
+        });
+
+        jButton1.setBackground(new java.awt.Color(51, 102, 255));
+        jButton1.setFont(new java.awt.Font("Times New Roman", 1, 20)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
+        jButton1.setText("Log out");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        jButton2.setBackground(new java.awt.Color(51, 255, 51));
+        jButton2.setFont(new java.awt.Font("Times New Roman", 1, 20)); // NOI18N
+        jButton2.setForeground(new java.awt.Color(255, 255, 255));
+        jButton2.setText("Regjistro Klient");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
             }
         });
 
@@ -1063,16 +1092,23 @@ public class Dashboard extends javax.swing.JFrame {
                 .addComponent(btnFatura, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(43, 43, 43)
                 .addComponent(btnReset, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(41, 41, 41)
-                .addComponent(btnExit, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(781, Short.MAX_VALUE))
+                .addGap(187, 187, 187)
+                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(53, 53, 53)
+                .addComponent(btnExit, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(222, 222, 222))
         );
         jPanel16Layout.setVerticalGroup(
             jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel16Layout.createSequentialGroup()
                 .addGap(35, 35, 35)
                 .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(btnExit, javax.swing.GroupLayout.DEFAULT_SIZE, 44, Short.MAX_VALUE)
+                    .addComponent(btnExit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(btnTotal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnFatura, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnReset, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -1529,6 +1565,21 @@ int qty=Integer.parseInt(jSpinner1.getValue().toString());
            }
        }
     }//GEN-LAST:event_formWindowOpened
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        Login login = new Login();
+        login.setVisible(true);
+        login.pack();
+        this.dispose();
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+      UserRegistrationForm register = new UserRegistrationForm();
+        register.setVisible(true);
+        register.pack();
+        this.dispose();
+    }//GEN-LAST:event_jButton2ActionPerformed
+   
    
     
     public void getTax(double t){
@@ -1593,6 +1644,8 @@ int qty=Integer.parseInt(jSpinner1.getValue().toString());
     private javax.swing.JButton btnFatura;
     private javax.swing.JButton btnReset;
     private javax.swing.JButton btnTotal;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JCheckBox jCheckBox10;
     private javax.swing.JCheckBox jCheckBox11;
